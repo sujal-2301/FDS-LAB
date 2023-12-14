@@ -8,14 +8,14 @@ def linear_search(arr, x):
 
 
 # Sentinel Linear Search
-
+# just removes the for loop parameter check in each iteration , nothing too fancy
 def sentinel_search(arr, n, key):
     last = arr[n - 1]  # Last element of the array
     arr[n - 1] = key  # Element to be searched is placed at the last index
     i = 0
     while (arr[i] != key):
         i += 1
-        arr[n - 1] = last  # Put the last element back
+    arr[n - 1] = last  # Put the last element back
     if ((i < n - 1) or (arr[n - 1] == key)):
         return i
     else:
