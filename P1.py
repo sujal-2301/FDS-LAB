@@ -87,61 +87,31 @@ SE_COMP = removeDuplicate(SE_COMP)
 print("List of total students after removing duplicate elements is : ", str(SE_COMP))
 
 
-# Creating the list of students playing Cricket
+def createSportList(sport_name):
+    sport_list = []
 
-Cricket = []
+    n = int(input(f"Enter the number of students playing {sport_name}: "))
+    print(
+        f"Enter the name of each student, press ENTER after each name for {sport_name}")
+    for i in range(n):
+        ele = input()
+        sport_list.append(ele)
 
-# Taking input for this list
+    print(f"The list of students playing {sport_name} is: {sport_list}")
+    sport_list = removeDuplicate(sport_list)
+    print(
+        f"List of students playing {sport_name} after removing duplicate elements: {sport_list}")
 
-n = int(input("Enter the number of students playing cricket : "))
-print("Enter the name of each student , press ENTER after each name ")
-for i in range(n):
-    ele = input()
-
-    Cricket.append(ele)
-print("The list of students playing cricket is ", str(Cricket))
-Cricket = removeDuplicate(Cricket)
-print("List of students playing cricket after removing duplicate elements is : ", str(Cricket))
-
-
-# Creating the list of students playing Football
-
-Football = []
-
-# Taking input for this list
-
-n = int(input("Enter the number of students playing Football : "))
-print("Enter the name of each student , press ENTER after each name ")
-for i in range(n):
-    ele = input()
-
-    Football.append(ele)
-print("The list of students playing Football is ", str(Football))
-Football = removeDuplicate(Football)
-print("List of students playing Football after removing duplicate elements is : ", str(Football))
+    return sport_list
 
 
-# Creating the list of students playing Badminton
-
-Badminton = []
-
-# Taking input for this list
-
-n = int(input("Enter the number of students playing Badminton : "))
-print("Enter the name of each student , press ENTER after each name ")
-for i in range(n):
-    ele = input()
-
-    Badminton.append(ele)
-print("The list of students playing Badminton is ", str(Badminton))
-Badminton = removeDuplicate(Badminton)
-print("List of students playing Badminton after removing duplicate elements is : ", str(Badminton))
-
+# Creating the lists for each sport
+Cricket = createSportList("cricket")
+Football = createSportList("football")
+Badminton = createSportList("badminton")
 
 # Creating the menu for the program
-
-flag = 1
-while flag == 1:
+while True:
     print("")
     print("**********************Welcome******************************")
     print("")
@@ -157,40 +127,17 @@ while flag == 1:
 
     if (ch == 1):
         CB(Cricket, Badminton)
-        yon = input("Do you wish to continue? y/n : ")
-        if (yon == "y"):
-            flag = 1
-        else:
-            print("Thanks for using the Program!")
-            flag = 0
-
     elif (ch == 2):
         eCoB(Cricket, Badminton)
-        yon = input("Do you wish to continue? y/n : ")
-        if (yon == "y"):
-            flag = 1
-        else:
-            print("Thanks for using the Program!")
-            flag = 0
-
     elif (ch == 3):
         nCnB(Football, Cricket, Badminton)
-        yon = input("Do you wish to continue? y/n : ")
-        if (yon == "y"):
-            flag = 1
-        else:
-            print("Thanks for using the Program!")
-            flag = 0
-
     elif (ch == 4):
         CFnB(Cricket, Football, Badminton)
-        yon = input("Do you wish to continue? y/n : ")
-        if (yon == "y"):
-            flag = 1
-        else:
-            print("Thanks for using the Program!")
-            flag = 0
-
     else:
         print("Thanks for using the Program!")
-        flag = 0
+        break
+
+    yon = input("Do you wish to continue? y/n : ")
+    if yon.lower() != "y":
+        print("Thanks for using the Program!")
+        break
