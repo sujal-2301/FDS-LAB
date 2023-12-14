@@ -35,11 +35,14 @@ void Stack::reverse()
     char str[max];
     cout << "\n\nReverse string is : ";
 
-    for (int i = top, j = 0; i >= 0; i--, j++)
+    int j = 0;
+    for (int i = top; i >= 0; i--)
     {
-        cout << origStr[i];
-        str[j] = origStr[i];
+        cout << origStr[i];  // Output the character
+        str[j] = origStr[i]; // Store the character in another array or variable
+        j = j + 1;           // Increment j manually
     }
+
     cout << endl;
 }
 
@@ -53,7 +56,7 @@ void Stack::convert(char str[])
         {
             if ((int)str[j] <= 90)
             {
-                str[k] = (char)((int)str[j] + 32);
+                str[k] = (char)((int)str[j] + 32); // convert upper case to lower
             }
             else
             {

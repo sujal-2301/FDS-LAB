@@ -40,7 +40,11 @@ bool Queue::isEmpty()
     return false;
 }
 
-void Queue::enqueue(int x) { q.data[++q.tail] = x; }
+void Queue::enqueue(int x)
+{
+    q.tail = q.tail + 1; // Move the tail pointer to the next position
+    q.data[q.tail] = x;  // Place 'x' in the next available position in the queue
+}
 
 void Queue::dequeue()
 {
