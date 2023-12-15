@@ -1,5 +1,4 @@
 #include <iostream>
-#include <stdlib.h>
 using namespace std;
 
 class node
@@ -63,7 +62,7 @@ void cinemax::display()
         while (temp->next != head)
         {
             if (temp->seat / 10 == 0)
-                cout << "S0" << temp->seat << " :";
+                cout << "S0" << temp->seat << " :"; // less than 10 -> prefix 0 added
             else
                 cout << "S" << temp->seat << " :";
             if (temp->status == 0)
